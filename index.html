@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+  
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js">
+    </script>
+    <script >
+        var socket = io();
+        var send =function(){
+            var form = document.getElementById('input').value;
+            socket.emit('chat message', form);
+        }
+        
+
+       
+
+    </script>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button onclick="send()">Send</button>
+    </form>
+   
+ 
+  </body>
+</html>
